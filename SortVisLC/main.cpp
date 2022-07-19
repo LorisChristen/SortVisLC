@@ -9,7 +9,7 @@ int main()
 {
     srand(time(NULL));
 
-    sortEngine s(100);
+    sortEngine s(50);
     CLIVisualizer CLI;
 
     s.shuffle();

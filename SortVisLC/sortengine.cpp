@@ -18,15 +18,20 @@ void sortEngine::shuffle(){
 void sortEngine::selectionSort(){
     std::cout << "Selection sorting..." << std::endl;
     auto start = std::chrono::high_resolution_clock::now();
+    // Algorithm
+    int minIdx;
     do{
-    for(int i = 0; i < (int)values.size() - 1; i++){
-        if(values[i] > values[i+1]){
-            swap(values[i], values[i+1]);
+        for(int i = 0; i < (int)values.size() - 1; i++){
+            minIdx = i;
+            for(int j = i + 1; j < (int)values.size(); j++){
+                if(values[j] < values[minIdx])
+                    minIdx = j;
+            }
+            swap(values[i], values[minIdx]);
         }
-    }
     }while(sorted() == false);
-    auto end = std::chrono::high_resolution_clock::now();
 
+    auto end = std::chrono::high_resolution_clock::now();
     double elapsed_time_ms = std::chrono::duration<double, std::milli>(end-start).count();
     std::cout << "Time elapsed : " << elapsed_time_ms << " ms" << std::endl;
 }
