@@ -13,10 +13,12 @@ int main()
     CLIVisualizer CLI;
 
     s.shuffle();
-    CLI.display(s);
 
     s.selectionSort();
-    CLI.display(s);
+
+    s.shuffle();
+
+    s.bubbleSort();
 
     /*
     QApplication a();

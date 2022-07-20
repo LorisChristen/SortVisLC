@@ -19,6 +19,7 @@ public:
     void selectionSort();
 
     // Bubble sort
+    void bubbleSort();
 
     // get the values vector
     std::vector<int> *getValues(){ return &values;}
